@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+int *gerar_progressao(int n, int valor_inicial, int razao) {
+int *array = (int *)malloc(n * sizeof(int));
+if (array == NULL) {
+printf("Erro ao alocar memoria.\n");
+exit(1);
+}
+array[0] = valor_inicial;
+int i;
+for ( i = 1; i < n; i++) {
+array[i] = array[i - 1] + razao;
+}
+return array;
+}
+void imprimir_array(int *array, int n) {
+int i;
+for ( i = 0; i < n; i++) {
+printf("%d ", array[i]);
+}
+printf("\n");
+}
+int main() {
+int n, valor_inicial, razao;
+printf("Digite a quantidade de elementos: ");
+scanf("%d", &n);
+printf("Digite o valor inicial: ");
+scanf("%d", &valor_inicial);
+printf("Digite a razao da progressão: ");
+scanf("%d", &razao);
+int *resultado = gerar_progressao(n, valor_inicial, razao);
+imprimir_array(resultado, n);
+free(resultado);
+return 0;
+}
