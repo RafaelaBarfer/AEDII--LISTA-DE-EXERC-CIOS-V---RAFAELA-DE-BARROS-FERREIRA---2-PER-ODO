@@ -1,0 +1,25 @@
+#include <stdio.h>
+int busca_binaria(int array[], int a, int b, int c) {
+if (b >= a) {
+int meio = a + (b - a) / 2;
+if (array[meio] == c)
+return meio;
+if (array[meio] > c)
+return busca_binaria(array, a, meio - 1, c);
+return busca_binaria(array, meio + 1, b, c);
+}
+return -1;
+}
+int main() {
+int array[] = {2, 3, 4, 10, 40};
+int x;
+int n = sizeof(array) / sizeof(array[0]);
+printf ("Digite um numero: ");
+scanf ("%d",&x);
+int resultado = busca_binaria(array, 0, n - 1, x);
+if (resultado == -1) {
+printf("Elemento nao encontrado");
+} else{
+printf("Elemento encontrado no indice %d\n", resultado + 1);}
+return 0;
+}
