@@ -1,0 +1,17 @@
+#include <stdio.h>
+int maior_numero(int num1, int num2, int num3) {
+if (num1 >= num2 && num1 >= num3) {
+return num1;
+} else if (num2 >= num1 && num2 >= num3) {
+return num2;
+} else {
+return num3;
+}
+}
+int main() {
+int a, b, c, maior;
+printf("Digite tres numeros: ");
+scanf("%d %d %d", &a, &b, &c);
+maior = maior_numero(a, b, c);
+printf("O maior numero e: %d\n", maior);
+return0; }
