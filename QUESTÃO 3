@@ -1,0 +1,16 @@
+#include <stdio.h>
+int fibonacci(int n) {
+if (n <= 1) {
+return n;
+} else {
+return fibonacci(n - 1) + fibonacci(n - 2);
+}
+}
+int main() {
+int num, resultado;
+printf("Digite o valor de n: ");
+scanf("%d", &num);
+resultado= fibonacci (num);
+printf("O n-esimo termo da sequencia de Fibonacci e: %d\n", resultado);
+return 0;
+}
