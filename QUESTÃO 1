@@ -1,0 +1,16 @@
+#include <stdio.h>
+int soma (int num){
+if (num==0 || num ==1)
+{ return 1;
+}else {
+return num + soma (num -1);
+}
+}
+int main (){
+int positivo, number;
+printf ("Digite um numero inteiro: ");
+scanf ("%d",&number);
+positivo = soma (number);
+printf ("O resultado e: %d ",positivo);
+return 0;
+}
